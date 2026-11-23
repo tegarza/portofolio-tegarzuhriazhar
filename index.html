@@ -122,6 +122,11 @@
   <div class="foot-st">🧸 🎀 🌸 🍰 🐰</div>
 </footer>
 
+<!-- Musik latar: taruh file musik.mp3 di folder yang sama -->
+<audio id="musik" src="musik.mp3" loop preload="auto"></audio>
+<button id="btnMusik" class="musik-btn" aria-label="Putar atau jeda musik">🎵</button>
+<p id="infoMusik" class="info-musik"></p>
+
 <script>
   // Stiker melayang
   const emo = ['💖','🎀','🌸','⭐','🍭','🧁','🌷','✨','🎈','🦋'];
@@ -149,6 +154,36 @@
     }
   }
   document.getElementById('btnKejutan').addEventListener('click', () => {
+    konfeti();
+    document.querySelector('.card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+   // Musik latar
+  const musik = document.getElementById('musik');
+  const btnMusik = document.getElementById('btnMusik');
+  const infoMusik = document.getElementById('infoMusik');
+  musik.volume = 0.5;
+
+  function tampilInfo(teks) {
+    infoMusik.textContent = teks;
+    infoMusik.classList.add('tampil');
+    setTimeout(() => infoMusik.classList.remove('tampil'), 3000);
+  }
+  function putarMusik() {
+    musik.play().then(() => {
+      btnMusik.classList.add('main');
+      btnMusik.textContent = '🔊';
+    }).catch(() => tampilInfo('File musik.mp3 belum ditemukan 🎶'));
+  }
+  function jedaMusik() {
+    musik.pause();
+    btnMusik.classList.remove('main');
+    btnMusik.textContent = '🔇';
+  }
+  btnMusik.addEventListener('click', () => (musik.paused ? putarMusik() : jedaMusik()));
+
+  document.getElementById('btnKejutan').addEventListener('click', () => {
+    if (musik.paused) putarMusik();
     konfeti();
     document.querySelector('.card').scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
