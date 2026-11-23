@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selamat Ulang Tahun 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Stiker melayang -->
+<div class="floaties" id="floaties"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="sticker s1">🎀</div>
+  <div class="sticker s2">🧸</div>
+  <div class="sticker s3">🌸</div>
+  <div class="sticker s4">🐰</div>
+  <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+  <h1>Happy Birthday<br><span class="nama">Amanda Fitrya Lubis</span> 🎂</h1>
+  <p class="sub">Semoga hari spesialmu penuh cinta, tawa, dan keberkahan 💖</p>
+  <button id="btnKejutan" class="btn">🎁 Buka Kejutan</button>
+</header>
+
+<!-- GALERI -->
+<section class="section">
+  <h2>Kenangan Manis Kamu 📸</h2>
+  <p class="desc">Foto Foto si Cantiknya abang 💖</p>
+  <div class="gallery">
+    <figure class="polaroid r-left">
+      <div class="foto"><span class="ph">🌷</span><img src="foto2.jpeg" alt="Foto 1" onerror="this.remove()"></div>
+      <figcaption>Si manis 🌸</figcaption>
+      <span class="tape">🎀</span>
+    </figure>
+    <figure class="polaroid r-right">
+      <div class="foto"><span class="ph">🧁</span><img src="foto1.jpeg" alt="Foto 2" onerror="this.remove()"></div>
+      <figcaption>Senyummu cantik ✨</figcaption>
+      <span class="tape">💗</span>
+    </figure>
+    <figure class="polaroid r-left">
+      <div class="foto"><span class="ph">🐻</span><img src="foto3.jpeg" alt="Foto 3" onerror="this.remove()"></div>
+      <figcaption>Selalu bahagia 🥰</figcaption>
+      <span class="tape">⭐</span>
+    </figure>
+  </div>
+</section>
+
+<!-- UCAPAN -->
+<section class="section">
+  <div class="card">
+    <div class="corner">💌</div>
+    <h2>Ucapan Untuk Adek</h2>
+    <p class="arab">بَارَكَ اللَّهُ فِي عُمْرِكِ</p>
+    <p class="arti">Semoga Allah memberkahi umurmu</p>
+    <p>
+      Selamat ulang tahun, adek, sayang abang, cinta abang, cantik abang, dunia abang, segala-gala nya bagi abang 💕 Hari ini bertambah satu usia, dan berkurang satu jatah waktu di dunia. Semoga setiap detiknya
+      menjadikanmu hamba yang makin dekat kepada Allah, makin bersyukur, dan makin sabar.
+    </p>
+    <p>
+      Barakallahu fii umrik sayang. Semoga Allah menjaga imanmu, melancarkan rezekimu, menyehatkan tubuhmu, dan mengabulkan
+      doa-doa baik yang selama ini kamu bisikkan dalam sujudmu 🤲
+    </p>
+    <p>
+      Terima kasih sudah hadir dengan senyum manismu. Adek itu seperti permen kapas: manis, lembut, dan bikin hari-hari terasa
+      lebih ceria 🍭 Semoga cinta dan kebahagiaan selalu memelukmu.
+    </p>
+    <p class="ttd">Dengan cinta, <span>Abang 💖</span></p>
+  </div>
+</section>
+
+<!-- ALASAN -->
+<section class="section">
+  <h2>Doa & Harapan 🤍</h2>
+  <div class="wishes">
+    <div class="wish"><span>🕌</span><b>Iman</b><small>Semoga hatimu selalu tenang bersama Allah</small></div>
+    <div class="wish"><span>🌷</span><b>Bahagia</b><small>Semoga senyummu tak pernah pudar</small></div>
+    <div class="wish"><span>💝</span><b>Cinta</b><small>Semoga dikelilingi orang-orang tersayang</small></div>
+    <div class="wish"><span>🌙</span><b>Berkah</b><small>Semoga setiap langkah penuh keberkahan</small></div>
+  </div>
+</section>
+
+<!-- KUE -->
+<section class="section cake-sec">
+  <h2>Tiup Lilinnya! 🕯️</h2>
+  <div class="cake" id="cake">
+    <div class="flame" id="flame">🔥</div>
+    <div class="candle"></div>
+    <!-- topping di atas kue -->
+    <span class="topping t1">🍓</span>
+    <span class="topping t2">🍒</span>
+    <span class="topping t3">🍒</span>
+    <span class="topping t4">🍓</span>
+    <!-- lapisan bawah -->
+    <div class="layer l1">
+      <span class="deco d1">💗</span>
+      <span class="teks-kue">Happy Birthday</span>
+      <span class="deco d2">💗</span>
+    </div>
+    <!-- lapisan atas -->
+    <div class="layer l2">
+      <span class="deco e1">🌸</span>
+      <span class="deco e2">🎀</span>
+      <span class="deco e3">🌸</span>
+    </div>
+    <div class="plate"></div>
+    <!-- kilau di sekitar kue -->
+    <span class="kilau k1">✨</span>
+    <span class="kilau k2">⭐</span>
+    <span class="kilau k3">✨</span>
+    <span class="kilau k4">💖</span>
+  </div>
+  <button id="btnTiup" class="btn">💨 Tiup Lilin</button>
+  <p id="pesanTiup" class="desc"></p>
+</section>
+
+<footer>
+  <p>Aamiin ya Rabbal 'alamin 🤲</p>
+  <p>Dibuat dengan cinta💖 untuk hari spesialmu</p>
+  <div class="foot-st">🧸 🎀 🌸 🍰 🐰</div>
+</footer>
+
+<script>
+  // Stiker melayang
+  const emo = ['💖','🎀','🌸','⭐','🍭','🧁','🌷','✨','🎈','🦋'];
+  const box = document.getElementById('floaties');
+  for (let i = 0; i < 18; i++) {
+    const s = document.createElement('span');
+    s.textContent = emo[i % emo.length];
+    s.style.left = Math.random() * 100 + 'vw';
+    s.style.fontSize = (16 + Math.random() * 22) + 'px';
+    s.style.animationDuration = (9 + Math.random() * 10) + 's';
+    s.style.animationDelay = (-Math.random() * 15) + 's';
+    box.appendChild(s);
+  }
+
+  // Hujan konfeti hati
+  function konfeti() {
+    for (let i = 0; i < 40; i++) {
+      const c = document.createElement('span');
+      c.className = 'confetti';
+      c.textContent = emo[Math.floor(Math.random() * emo.length)];
+      c.style.left = Math.random() * 100 + 'vw';
+      c.style.animationDuration = (2 + Math.random() * 2.5) + 's';
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 5000);
+    }
+  }
+  document.getElementById('btnKejutan').addEventListener('click', () => {
+    konfeti();
+    document.querySelector('.card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // Teks animasi "Yeayyy" & "Horeee"
+  const kata = ['Yeayyy! 🎉', 'Horeee! 🥳', 'Yeayyy! 💖', 'Horeee! 🎂', 'Yeayyy! ✨', 'Horeee! 🎈'];
+  const warna = ['#e0457f', '#ff5c9d', '#ff8fb8', '#c2185b', '#f06292'];
+  function popText(teks) {
+    const el = document.createElement('div');
+    el.className = 'pop-text';
+    el.textContent = teks;
+    el.style.left = (10 + Math.random() * 60) + 'vw';
+    el.style.top = (15 + Math.random() * 60) + 'vh';
+    el.style.color = warna[Math.floor(Math.random() * warna.length)];
+    el.style.fontSize = (2 + Math.random() * 2.2) + 'rem';
+    el.style.setProperty('--rot', (Math.random() * 30 - 15) + 'deg');
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 2600);
+  }
+
+  let sedangTiup = false;
+  document.getElementById('btnTiup').addEventListener('click', () => {
+    if (sedangTiup) return;
+    sedangTiup = true;
+    document.getElementById('flame').classList.add('off');
+    document.getElementById('pesanTiup').textContent =
+      'Semoga semua doamu dikabulkan Allah ya 🤲💖 Aamiin!';
+    konfeti();
+    kata.forEach((k, i) => setTimeout(() => popText(k), i * 350));
+    setTimeout(() => { sedangTiup = false; }, kata.length * 350 + 800);
+  });
+</script>
+</body>
+</html>
