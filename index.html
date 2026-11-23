@@ -20,7 +20,7 @@
   <div class="sticker s3">🌸</div>
   <div class="sticker s4">🐰</div>
   <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
-  <h1>Happy Birthday<br><span class="nama">Amanda Fitrya Lubis</span> 🎂</h1>
+  <h1>Happy Birthday<br><span class="nama">Nama Kamu</span> 🎂</h1>
   <p class="sub">Semoga hari spesialmu penuh cinta, tawa, dan keberkahan 💖</p>
   <button id="btnKejutan" class="btn">🎁 Buka Kejutan</button>
 </header>
@@ -28,20 +28,20 @@
 <!-- GALERI -->
 <section class="section">
   <h2>Kenangan Manis Kamu 📸</h2>
-  <p class="desc">Foto Foto si Cantiknya abang 💖</p>
+  <p class="desc">Ganti foto dengan fotomu: foto1.jpg, foto2.jpg, foto3.jpg</p>
   <div class="gallery">
     <figure class="polaroid r-left">
-      <div class="foto"><span class="ph">🌷</span><img src="foto2.jpeg" alt="Foto 1" onerror="this.remove()"></div>
+      <div class="foto"><span class="ph">🌷</span><img src="foto1.jpg" alt="Foto 1" onerror="this.remove()"></div>
       <figcaption>Si manis 🌸</figcaption>
       <span class="tape">🎀</span>
     </figure>
     <figure class="polaroid r-right">
-      <div class="foto"><span class="ph">🧁</span><img src="foto1.jpeg" alt="Foto 2" onerror="this.remove()"></div>
+      <div class="foto"><span class="ph">🧁</span><img src="foto2.jpg" alt="Foto 2" onerror="this.remove()"></div>
       <figcaption>Senyummu cantik ✨</figcaption>
       <span class="tape">💗</span>
     </figure>
     <figure class="polaroid r-left">
-      <div class="foto"><span class="ph">🐻</span><img src="foto3.jpeg" alt="Foto 3" onerror="this.remove()"></div>
+      <div class="foto"><span class="ph">🐻</span><img src="foto3.jpg" alt="Foto 3" onerror="this.remove()"></div>
       <figcaption>Selalu bahagia 🥰</figcaption>
       <span class="tape">⭐</span>
     </figure>
@@ -52,22 +52,22 @@
 <section class="section">
   <div class="card">
     <div class="corner">💌</div>
-    <h2>Ucapan Untuk Adek</h2>
+    <h2>Ucapan Untukmu</h2>
     <p class="arab">بَارَكَ اللَّهُ فِي عُمْرِكِ</p>
     <p class="arti">Semoga Allah memberkahi umurmu</p>
     <p>
-      Selamat ulang tahun, adek, sayang abang, cinta abang, cantik abang, dunia abang, segala-gala nya bagi abang 💕 Hari ini bertambah satu usia, dan berkurang satu jatah waktu di dunia. Semoga setiap detiknya
+      Selamat ulang tahun, sayang 💕 Hari ini bertambah satu usia, dan berkurang satu jatah waktu di dunia. Semoga setiap detiknya
       menjadikanmu hamba yang makin dekat kepada Allah, makin bersyukur, dan makin sabar.
     </p>
     <p>
-      Barakallahu fii umrik sayang. Semoga Allah menjaga imanmu, melancarkan rezekimu, menyehatkan tubuhmu, dan mengabulkan
+      Barakallahu fii umrik. Semoga Allah menjaga imanmu, melapangkan rezekimu, menyehatkan tubuhmu, dan mengabulkan
       doa-doa baik yang selama ini kamu bisikkan dalam sujudmu 🤲
     </p>
     <p>
-      Terima kasih sudah hadir dengan senyum manismu. Adek itu seperti permen kapas: manis, lembut, dan bikin hari-hari terasa
+      Terima kasih sudah hadir dengan senyum manismu. Kamu itu seperti permen kapas: manis, lembut, dan bikin hari-hari terasa
       lebih ceria 🍭 Semoga cinta dan kebahagiaan selalu memelukmu.
     </p>
-    <p class="ttd">Dengan cinta, <span>Abang 💖</span></p>
+    <p class="ttd">Dengan cinta, <span>Dari Aku 💖</span></p>
   </div>
 </section>
 
@@ -118,7 +118,7 @@
 
 <footer>
   <p>Aamiin ya Rabbal 'alamin 🤲</p>
-  <p>Dibuat dengan cinta💖 untuk hari spesialmu</p>
+  <p>Dibuat dengan 💖 untuk hari spesialmu</p>
   <div class="foot-st">🧸 🎀 🌸 🍰 🐰</div>
 </footer>
 
@@ -153,16 +153,11 @@
       setTimeout(() => c.remove(), 5000);
     }
   }
-  document.getElementById('btnKejutan').addEventListener('click', () => {
-    konfeti();
-    document.querySelector('.card').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
-
-   // Musik latar
+  // Musik latar
   const musik = document.getElementById('musik');
   const btnMusik = document.getElementById('btnMusik');
   const infoMusik = document.getElementById('infoMusik');
-  musik.volume = 0.7;
+  musik.volume = 0.8;
 
   function tampilInfo(teks) {
     infoMusik.textContent = teks;
@@ -181,6 +176,22 @@
     btnMusik.textContent = '🔇';
   }
   btnMusik.addEventListener('click', () => (musik.paused ? putarMusik() : jedaMusik()));
+
+  // Autoplay: coba langsung saat halaman dibuka.
+  // Jika diblokir browser, musik mulai saat sentuhan/klik pertama di mana saja.
+  let sudahDijeda = false;
+  btnMusik.addEventListener('click', () => { sudahDijeda = true; });
+  musik.play().then(() => {
+    btnMusik.classList.add('main');
+    btnMusik.textContent = '🔊';
+  }).catch(() => {
+    const mulai = (e) => {
+      if (e.target.closest('#btnMusik')) return;
+      if (musik.paused && !sudahDijeda) putarMusik();
+      ['click', 'touchstart', 'keydown'].forEach(ev => document.removeEventListener(ev, mulai));
+    };
+    ['click', 'touchstart', 'keydown'].forEach(ev => document.addEventListener(ev, mulai));
+  });
 
   document.getElementById('btnKejutan').addEventListener('click', () => {
     if (musik.paused) putarMusik();
@@ -204,6 +215,7 @@
     setTimeout(() => el.remove(), 2600);
   }
 
+  // Tiup lilin
   let sedangTiup = false;
   document.getElementById('btnTiup').addEventListener('click', () => {
     if (sedangTiup) return;
